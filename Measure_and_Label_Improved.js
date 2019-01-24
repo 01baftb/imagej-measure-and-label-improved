@@ -32,6 +32,11 @@ img = WindowManager.getCurrentImage();
 
 // Get current overlay instance so it can be used later 
 current_overlay = img.getOverlay();
+// If the current image doesn't already have an overlay, then create a new overlay. 
+if (current_overlay == null) {
+    current_overlay = new Overlay();
+    img.setOverlay(current_overlay);
+}
 
 // Get info about the image 
 img_height_px = img.getHeight();
